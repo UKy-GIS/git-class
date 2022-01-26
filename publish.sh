@@ -22,10 +22,10 @@ for x in $(cat list.txt)
         echo "NO ************ $x ************"
     else
         echo $x is there
-        git clone $repo
         cd $mod-$x
-        git branch eval
-        git checkout eval
+        git add --all
+        git commit -m 'new functions and eval'
+        git push -u origin eval
         cd ..
     fi
 done
