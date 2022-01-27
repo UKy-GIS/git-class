@@ -2,7 +2,7 @@
 
 # Set variables
 class=uky-gis
-mod=geo409-mod-04
+mod=$(cat module.txt)
 folder=/Volumes/D/_repos/UKy-GIS/_student/_$mod
 
 # Make directory
