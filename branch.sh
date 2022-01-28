@@ -3,8 +3,10 @@
 # Set variables
 class=uky-gis
 mod=$(cat module.txt)
+branch=$(cat branch.txt)
 folder=/Volumes/D/_repos/UKy-GIS/_student/_$mod
 
+cp branch.txt $folder/
 # Move into directoruy and clone repos
 cd $folder
 for x in $(cat list.txt)
@@ -17,7 +19,7 @@ for x in $(cat list.txt)
     else
         echo $x is there
         cd $mod-$x
-        git checkout $(cat branch.txt)
+        git checkout $branch
         cd ..
     fi
 done

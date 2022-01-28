@@ -3,7 +3,8 @@
 # Set variables
 class=uky-gis
 mod=$(cat module.txt)
-folder=/Volumes/D/_repos/UKy-GIS/_student/_$mod
+branch=$(cat branch.txt)
+folder=$(cat folder.txt)$mod
 
 # Make directory
 mkdir $folder
@@ -24,8 +25,8 @@ for x in $(cat list.txt)
         echo $x is there
         git clone $repo
         cd $mod-$x
-        git branch eval
-        git checkout eval
+        # git branch $branch
+        git checkout $branch
         cd ..
     fi
 done

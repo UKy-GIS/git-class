@@ -3,13 +3,15 @@
 # Set variables
 class=uky-gis
 mod=$(cat module.txt)
-folder=/Volumes/D/_repos/UKy-GIS/_student/_$mod
+branch=$(cat branch.txt)
+folder=$(cat folder.txt)$mod
 
 # Make directory
 mkdir $folder
 
 # Copy list of Github usernames, one name per line
 cp list.txt $folder/
+cp branch.txt $folder/
 
 # Move into directoruy and clone repos
 cd $folder
@@ -24,8 +26,8 @@ for x in $(cat list.txt)
         echo $x is there
         cd $mod-$x
         git add --all
-        git commit -m 'new functions and eval'
-        git push -u origin $(cat branch.txt)
+        git commit -m 'add eval doc'
+        git push -u origin $branch
         cd ..
     fi
 done
