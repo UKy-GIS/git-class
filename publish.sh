@@ -7,13 +7,13 @@ branch=$(cat branch.txt)
 folder=$(cat folder.txt)$mod
 
 # Make directory
-mkdir $folder
+# mkdir $folder
 
 # Copy list of Github usernames, one name per line
 cp list.txt $folder/
 cp branch.txt $folder/
 
-# Move into directoruy and clone repos
+# Move into directory, commit, and push
 cd $folder
 for x in $(cat list.txt)
     do
